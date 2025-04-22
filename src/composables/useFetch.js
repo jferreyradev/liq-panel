@@ -15,7 +15,7 @@ export function useFetch(url) {
       .then((res) => res.json())
       .then((json) => (data.value = json))
       .catch((err) => (error.value = err))
-      .finally(()=>loading.value=false)
+      .finally(() => (loading.value = false))
   }
 
   watchEffect(() => {
