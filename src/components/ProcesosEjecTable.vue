@@ -1,7 +1,8 @@
 <script setup>
+import TableGen from '@/components/TableGen.vue'
 import { useFetch } from '@/composables/useFetch'
 
-const { data, error, loading } = useFetch(() => 'http://10.6.150.91:8000/api/query/procesosejec')
+const { data, error, loading } = useFetch(() => 'http://localhost:8000/api/query/procesosejec')
 
 //`http://10.6.150.91:8000/api/query/tipoliq`
 
@@ -10,26 +11,20 @@ const { data, error, loading } = useFetch(() => 'http://10.6.150.91:8000/api/que
 </script>
 
 <template>
-<div v-if="data">
-    {{ data }}
-</div>
-
-<!--   <div v-if="data" class="overflow-x-auto">
-    <table class="table">
-     
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Descripcion</th>
-        </tr>
-      </thead>
-      <tbody>
-       
-        <tr v-for="(item, index) in data" :key="index">
-          <td>{{ item.IDTIPOLIQUIDACION }}</td>
-          <td>{{ item.DESCRIPCION }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div> -->
+  <TableGen
+    v-if="data"
+    title="Procesos ejecutados"
+    :columns="[
+      'ID_EJEC_CAB',
+      'ID_PROC_DET',
+      'DESCRIPCION',
+      'DESC_PROC_DET',
+      'ESTADO',
+      'IDTIPOLIQ',
+      'GRUPOADIC',
+      'PERIODO',
+    ]"
+    :data="data"
+    @handleClick="(el) => console.log(el)"
+  />
 </template>
