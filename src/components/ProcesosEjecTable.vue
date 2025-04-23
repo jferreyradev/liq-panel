@@ -1,8 +1,11 @@
 <script setup>
 import TableGen from '@/components/TableGen.vue'
 import { useFetch } from '@/composables/useFetch'
+import { useEndPoints } from '@/composables/useEndPoints'
 
-const { data, error, loading } = useFetch(() => 'http://localhost:8000/api/query/procesosejec')
+const { apiBase, env } = useEndPoints()
+
+const { data, error, loading } = useFetch(() => `${apiBase.value}/query/procesosejec`)
 
 //`http://10.6.150.91:8000/api/query/tipoliq`
 

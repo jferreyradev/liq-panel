@@ -1,5 +1,12 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { useEndPoints } from './composables/useEndPoints'
+
+const { setEndPoint, apiBase, endPoints } = useEndPoints()
+
+setEndPoint(endPoints.local)
+
+//console.log(apiBase.value)
 </script>
 
 <template>
