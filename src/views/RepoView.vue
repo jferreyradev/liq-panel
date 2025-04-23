@@ -1,6 +1,5 @@
 <script setup>
-import ProcesosEjecTable from '@/components/ProcesosEjecTable.vue'
-import TipoLiqTable from '@/components/TipoLiqTable.vue'
+import RepoQuery from '@/components/RepoQuery.vue'
 </script>
 
 <template>
@@ -8,7 +7,7 @@ import TipoLiqTable from '@/components/TipoLiqTable.vue'
     <div class="hero-content text-center">
       <div class="max-w-3xl">
         <div>
-          <ProcesosEjecTable></ProcesosEjecTable>
+          <RepoQuery></RepoQuery>
         </div>
       </div>
     </div>

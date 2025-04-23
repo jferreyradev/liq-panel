@@ -3,11 +3,11 @@ import { ref } from 'vue'
 const endPoints = {
   local: {
     titulo: 'URL Local',
-    url: 'https://localhost:8000/api',
+    url: 'http://localhost:8000/api',
   },
   remote: {
     titulo: 'URL Remoto',
-    url: 'https://10.6.150.91:8000/api',
+    url: 'http://10.6.150.91:8000/api',
   },
 }
 
