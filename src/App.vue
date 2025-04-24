@@ -4,7 +4,7 @@ import { useEndPoints } from './composables/useEndPoints'
 
 const { setEndPoint, apiBase, endPoints } = useEndPoints()
 
-setEndPoint(endPoints.local)
+setEndPoint(endPoints.remote)
 
 //console.log(apiBase.value)
 </script>
